@@ -4,9 +4,11 @@ import Product from "./components/Product";
 import Link from "next/link";
 
 const page =async () => {
+
+  let apiUrl = process.env.API_URL
   const getproducts = async () => {
     try{
-      let res = await fetch("http://localhost:3000/api/shops/shopId/listings", {
+      let res = await fetch(`${apiUrl}/api/shops/shopId/listings`, {
         cache: "no-store",
       });
       let data = await res.json();
@@ -31,15 +33,15 @@ const page =async () => {
           fill
         />
         <div className="z-3 relative">
-          <h1 className="text-6xl font-semibold">
+          <h1 className="text-6xl font-semibold  text-white">
             Discover Latest Trends
             <br /> in Fashion
           </h1>
-          <p className="text-lg py-6">
-            Shop the newest arrivals and exclusive collections. Elevate your
+          <p className="text-lg py-6  text-white text-[.9rem]">
+            Shop the newest arrivals and exclusive collections. <br /> Elevate your
             style with our curated selection.
           </p>
-          <Link href={"/products"} className="p-6 py-3 bg-red-400 inline-block">
+          <Link href={"/products"} className="p-6 py-3 bg-red-400 inline-block  text-white">
             Shop Now
           </Link>
         </div>

@@ -3,8 +3,10 @@ import React from 'react'
 
 const page =async () => {
 
+  let apiUrl = process.env.API_URL
+
     const getproducts = async ()=>{
-        let res = await fetch('http://localhost:3000/api/shops/shopId/listings',{cache : "no-store"})
+        let res = await fetch(`${apiUrl}/api/shops/shopId/listings`,{cache : "no-store"})
         let data = await res.json()
         return data.listings
     }

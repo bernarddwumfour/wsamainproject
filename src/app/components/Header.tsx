@@ -18,7 +18,7 @@ const Header = () => {
     <nav className='p-4 shadow-lg pt-6 z-[10] flex justify-between bg-white text-gray-600 items-end fixed top-0 left-0 w-[100%]'>
         <Link href="/" className="logo text-2xl uppercase self-center">logo</Link>
 
-        <ul className='flex gap-4'>
+        <ul className='flex gap-4 text-sm'>
             <Link href="/">Home</Link>
             <Link href="/">About</Link>
             <Link href="/products">Products</Link>

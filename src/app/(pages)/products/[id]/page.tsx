@@ -2,10 +2,12 @@ import React from 'react'
 
 const page =async ({params}:{ params: { id: string } }) => {
 
+  let apiUrl = process.env.API_URL
+
     const getproduct = async () => {
 
         try{
-          let res = await fetch(`http://localhost:3000/api/listings/${params.id}`, {
+          let res = await fetch(`${apiUrl}/api/listings/${params.id}`, {
             cache: "no-store",
           });
           let data = await res.json();
