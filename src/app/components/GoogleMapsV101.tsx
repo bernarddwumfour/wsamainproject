@@ -147,7 +147,7 @@ const GoogleMapsV1 = () => {
 
     // Construct order data to match the DeliveryDTO model
     const orderData = {
-      orderId: 0, // Example value, replace with actual order ID
+      orderId: 5, // Example value, replace with actual order ID
       pickupLatitude: pickupLocation.lat(),
       pickupLongitude: pickupLocation.lng(),
       deliveryLatitude: deliveryLocation.lat(),
@@ -156,7 +156,7 @@ const GoogleMapsV1 = () => {
       scheduledTime: scheduledTime, // Two days after orderPlaced
       orderPlaced: orderPlaced, // Current time
       orderFulfilled: null,
-      customerId: "0", // Example value, replace with actual customer ID
+      customerId: "456", // Example value, replace with actual customer ID
       isOrderFulfilled: false,
       deliveryStatus: "Pending",
       fare: fare.toFixed(2),
@@ -190,8 +190,8 @@ const GoogleMapsV1 = () => {
       </div>
       <div className="h-[400px] w-full max-w-4xl mb-4 border bg-gray-400 rounded" ref={mapRef} />
       <div className="flex gap-4">
-        <button onClick={calculateDistance} className="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-400">Calculate Fare</button>
-        <button onClick={submitOrder} className="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-600">Submit Order</button>
+        <button onClick={calculateDistance} className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-400">Calculate Fare</button>
+        <button onClick={submitOrder} className="bg-black text-white px-4 py-2 rounded hover:bg-gray-600">Submit Order</button>
       </div>
       {fare !== null && <p className="mt-4 text-lg text-gray-700">Estimated Fare: GHS {fare.toFixed(2)}</p>}
     </div>

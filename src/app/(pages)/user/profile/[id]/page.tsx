@@ -20,55 +20,25 @@ const page = () => {
                 </p>
             </div>
 
-            <div className='mb-8'>
-                <p className='text-[1.1rem] font-bold text-gray-600'>
-                    Firstname
-                </p>
-                <p className='text-gray-500'>
-                    Bernard
-                </p>
-            </div>
-
-            <div className='mb-8'>
-                <p className='text-[1.1rem] font-bold text-gray-600'>
-                    Firstname
-                </p>
-                <p className='text-gray-500'>
-                    Bernard
-                </p>
-            </div>
+           
+            
 
            </div>
 
            
            <div className='p-12 w-1/3 rounded-lg shadow-lg bg-white '>
 
+            
             <div className='mb-8'>
                 <p className='text-[1.1rem] font-bold text-gray-600'>
-                    Firstname
+                    Lastname
                 </p>
                 <p className='text-gray-500'>
-                    Bernard
+                    Dwumfuor
                 </p>
             </div>
 
-            <div className='mb-8'>
-                <p className='text-[1.1rem] font-bold text-gray-600'>
-                    Firstname
-                </p>
-                <p className='text-gray-500'>
-                    Bernard
-                </p>
-            </div>
-
-            <div className='mb-8'>
-                <p className='text-[1.1rem] font-bold text-gray-600'>
-                    Firstname
-                </p>
-                <p className='text-gray-500'>
-                    Bernard
-                </p>
-            </div>
+            
 
            </div>
 

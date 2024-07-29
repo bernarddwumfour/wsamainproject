@@ -7,7 +7,7 @@ const page = () => {
     <>
     <div></div>
     <GoogleMapsV1/>
-    <div>Total Cost:</div>
+    
 
     </>
   )
