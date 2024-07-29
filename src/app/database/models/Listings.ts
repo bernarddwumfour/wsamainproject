@@ -1,10 +1,11 @@
-import { model, models, Schema } from 'mongoose';  
+import { model, models, Schema, Types } from 'mongoose';  
   
 export interface IListings {  
     name: string;  
     description: string;  
     price: number;  
     image : string;
+    shop: Types.ObjectId;
 }  
 const ListingsSchema = new Schema<IListings>(  
     {  
@@ -23,7 +24,12 @@ const ListingsSchema = new Schema<IListings>(
         image: {  
           type: String,
           required: true
-        }
+        },
+        shop: {
+          type: Schema.Types.ObjectId,
+          ref: 'Shop',
+          required: true  // Ensure each listing is associated with a shop
+      }
     },  
     {  
         timestamps: true,  
