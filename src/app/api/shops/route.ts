@@ -22,16 +22,17 @@ export async function GET() {
 
   export async function POST(request: Request) {
     try {
-      const { name, address } = await request.json();
+      const { name, address , owner } = await request.json();
   
-      if (!(name && address)) {
+      if (!(name && address && owner)) {
         return NextResponse.json({ message: 'Invalid shop data' }, { status: 400 });
       }
   
       await connectMongo();
       const shop = await Shop.create({
           name,
-          address
+          address,
+          owner
       });
   
       if (shop) {
