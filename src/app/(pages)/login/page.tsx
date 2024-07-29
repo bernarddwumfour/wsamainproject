@@ -3,12 +3,14 @@ import Link from "next/link";
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useRouter } from "next/navigation";
 
 // Define the validation schema using Yup
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email address").required("Email is required"),
   password: Yup.string().required("Password is required"),
 });
+
 
 interface FormValues {
   email: string;
@@ -43,9 +45,12 @@ const LoginPage = () => {
     password: "",
   };
 
+  const  router = useRouter()
+
   const handleSubmit = async (values: FormValues, setSubmitting: (isSubmitting: boolean) => void) => {
     try {
       const data = await login(values);
+
       // Handle successful login (e.g., redirect to dashboard or show success message)
       console.log('Login successful:', data);
     } catch (error) {
@@ -62,7 +67,10 @@ const LoginPage = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={(values, { setSubmitting }) => handleSubmit(values, setSubmitting)}
+          onSubmit={(values, { setSubmitting }) => {
+            handleSubmit(values, setSubmitting)
+            router.push('/')
+          }}
         >
           {({ isSubmitting }) => (
             <Form className="flex flex-col items-center w-full max-w-xl shadow-lg bg-white rounded-lg">
