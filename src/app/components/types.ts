@@ -6,7 +6,7 @@ export interface OrderDetails {
   quantity: number;
   price: number;
   total: number;
-  createdAt: Date;
+  createdAt: string;
 }
 
 // Define the structure for Order

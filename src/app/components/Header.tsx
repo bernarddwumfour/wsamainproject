@@ -20,7 +20,6 @@ const Header = () => {
 
         <ul className='flex gap-4 text-sm'>
             <Link href="/">Home</Link>
-            <Link href="/">About</Link>
             <Link href="/products">Products</Link>
         </ul>
 

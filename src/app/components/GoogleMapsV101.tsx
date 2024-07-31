@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
+import Link from 'next/link';
 
 const GoogleMapsV1 = () => {
   // Refs for map, input fields, and markers
@@ -163,13 +164,14 @@ const GoogleMapsV1 = () => {
     };
 
     try {
-      const response = await fetch('https://adama.bsite.net/api/deliveriesService', {
+      const response = await fetch('https://adama.bsite.net/api/deliveries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderData),
       });
 
       if (response.ok) {
+        alert("Order submitted successfully");
         console.log('Order submitted successfully');
       } else {
         console.error('Error submitting order:', orderData);
@@ -191,7 +193,7 @@ const GoogleMapsV1 = () => {
       <div className="h-[400px] w-full max-w-4xl mb-4 border bg-gray-400 rounded" ref={mapRef} />
       <div className="flex gap-4">
         <button onClick={calculateDistance} className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-400">Calculate Fare</button>
-        <button onClick={submitOrder} className="bg-black text-white px-4 py-2 rounded hover:bg-gray-600">Submit Order</button>
+        <button onClick={submitOrder} className="bg-black text-white px-4 py-2 rounded hover:bg-gray-600"><Link href="/orders">Submit Order</Link></button>
       </div>
       {fare !== null && <p className="mt-4 text-lg text-gray-700">Estimated Fare: GHS {fare.toFixed(2)}</p>}
     </div>

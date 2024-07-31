@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
@@ -13,6 +14,15 @@ const page = () => {
 
             <div className='mb-8'>
                 <p className='text-[1.1rem] font-bold text-gray-600'>
+                    Username
+                </p>
+                <p className='text-gray-500'>
+                    Bernard
+                </p>
+            </div>
+
+            <div className='mb-8'>
+                <p className='text-[1.1rem] font-bold text-gray-600'>
                     Firstname
                 </p>
                 <p className='text-gray-500'>
@@ -20,15 +30,29 @@ const page = () => {
                 </p>
             </div>
 
-           
-            
+            <div className='mb-8'>
+                <p className='text-[1.1rem] font-bold text-gray-600'>
+                    Surname
+                </p>
+                <p className='text-gray-500'>
+                    Bernard
+                </p>
+            </div>
 
            </div>
 
            
            <div className='p-12 w-1/3 rounded-lg shadow-lg bg-white '>
 
-            
+            <div className='mb-8'>
+                <p className='text-[1.1rem] font-bold text-gray-600'>
+                    Email
+                </p>
+                <p className='text-gray-500'>
+                    Bernard
+                </p>
+            </div>
+
             <div className='mb-8'>
                 <p className='text-[1.1rem] font-bold text-gray-600'>
                     Lastname
@@ -39,6 +63,10 @@ const page = () => {
             </div>
 
             
+
+            <Link href={'/user/dashboard/1'} className='text-gray-500'>View Order History</Link>
+
+            <Link href={'/user/dashboard/1'} className='text-gray-500'>View Order History</Link>
 
            </div>
 

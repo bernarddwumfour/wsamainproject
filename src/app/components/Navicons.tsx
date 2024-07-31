@@ -9,11 +9,12 @@ import { FaUserAlt } from 'react-icons/fa'
 
 
 const Navicons = () => {
-const {togglecart} = useContext(Appcontext)
+const {togglecart,cart} = useContext(Appcontext)
 
   return (
     <ul className='flex gap-8 pr-12 text-gray-500 text-xl'>
-            <span onClick={togglecart}>
+            <span onClick={togglecart} className='relative'>
+                <sup className='absolute -top-2 -right-2 p-1 py-0 rounded-full  bg-red-400 '>{cart.length}</sup>
                 <FaCartShopping/>
             </span>
 

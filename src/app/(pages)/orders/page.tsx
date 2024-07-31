@@ -8,14 +8,14 @@ interface OrdersPageProps {
   userId: number;
 }
 
-const Page: React.FC<OrdersPageProps> = ({ userId=0 }) => {
+const Page: React.FC<OrdersPageProps> = ({userId=123}) => {
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const apiUrl = process.env.NEXT_PUBLIC_ORDERMANAGEMENT_API_URL;
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get<Order[]>(`${apiUrl}/api/Users/${userId}/Orders`);
+        const response = await axios.get<Order[]>(`https://localhost:7093/api/Orders/${userId}`);
         setOrders(response.data);
       } catch (error) {
         console.error('Error fetching orders:', error);

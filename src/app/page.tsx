@@ -27,7 +27,7 @@ const page =async () => {
         className="bg-gray-400 py-[10rem] pt-[15rem] px-12 relative"
       >
         <Image
-          src={"/hero.jpg"}
+          src={"/banner.jpg"}
           alt="heroimage"
           className="object-cover brightness-50"
           fill
@@ -53,6 +53,39 @@ const page =async () => {
         </p>
         <h3 className="text-4xl pt-1 font-semibold pb-12 text-gray-600">
           Trending Now
+        </h3>
+        <div className="grid grid-cols-4 gap-6 ">
+        {products && products.length>0 && products.map(product=>(<Product product={product} key={product.name}/>))}
+        </div>
+      </div>
+
+      <div id="banner" className="bg-gray-200 py-[190px] text-white relative">
+      <Image
+          src={"/hero.jpg"}
+          alt="heroimage"
+          className="object-cover brightness-50"
+          fill
+        />
+
+        <div className="z-[2] relative">
+        <p className="text-center px-10 text-3xl font-semibold text-red-400 py-3">
+        Welcome to Our Store!
+        </p>
+       
+        <p className="text-center px-10">
+        Discover the best deals on your favorite products. Shop now and enjoy exclusive offers!
+        </p>
+       
+        </div>
+      </div>
+
+
+      <div id="menu" className="py-24 px-12 bg-white">
+        <p className="text-red-400 font-lg">
+        Check out the latest additions to our collection.
+        </p>
+        <h3 className="text-4xl pt-1 font-semibold pb-12 text-gray-600">
+          New In Store
         </h3>
         <div className="grid grid-cols-4 gap-6 ">
         {products && products.length>0 && products.map(product=>(<Product product={product} key={product.name}/>))}
