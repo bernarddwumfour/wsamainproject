@@ -30,7 +30,9 @@ const Page = ({ userId=0 }) => {
   return (
     <main className="bg-white min-h-screen py-24 pt-[9rem]">
       <h1 className="text-center font-3xl text-gray-600 text-2xl font-semibold">
+      <h1 className="text-center font-3xl text-gray-600 text-2xl font-semibold">
         My Dashboard
+      </h1>
       </h1>
 
       <div className="px-32">

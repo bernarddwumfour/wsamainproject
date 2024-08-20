@@ -149,9 +149,7 @@ const SignupPage = () => {
                 </div>
               </div>
               <button type="submit" className="p-3 px-6 bg-red-400 text-white text-sm w-fit inline-block border-none outline-none" disabled={isSubmitting}>
-                <Link href="/login">
                 Create Account
-                </Link>
               </button>
               <p className="text-gray-600 text-sm text-left py-8">Already have an account? <Link className="text-red-400 underline" href={"/login"}>Login Here</Link></p>
             </Form>

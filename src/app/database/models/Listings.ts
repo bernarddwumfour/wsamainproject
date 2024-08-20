@@ -4,6 +4,7 @@ export interface IListings {
     name: string;  
     description: string;  
     price: number;  
+    stock: number;  
     image : string;
     shop: Types.ObjectId;
 }  
@@ -18,6 +19,10 @@ const ListingsSchema = new Schema<IListings>(
           required: true
         },  
         price:  {
+          type: Number,
+          required: true
+        },  
+        stock:  {
           type: Number,
           required: true
         },  

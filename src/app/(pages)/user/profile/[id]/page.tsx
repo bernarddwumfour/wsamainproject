@@ -68,6 +68,8 @@ const page = () => {
 
             <Link href={'/user/dashboard/1'} className='text-gray-500'>View Order History</Link>
 
+            <Link href={'/user/dashboard/1'} className='text-gray-500'>View Order History</Link>
+
            </div>
 
 
