@@ -55,23 +55,18 @@ const page = () => {
 
             <div className='mb-8'>
                 <p className='text-[1.1rem] font-bold text-gray-600'>
-                    Firstname
+                    Lastname
                 </p>
                 <p className='text-gray-500'>
-                    Bernard
+                    Dwumfuor
                 </p>
             </div>
 
-            <div className='mb-8'>
-                <p className='text-[1.1rem] font-bold text-gray-600'>
-                    Firstname
-                </p>
-                <p className='text-gray-500'>
-                    Bernard
-                </p>
-            </div>
+            
 
-            <Link href={'/user/dashboard/1'} className='text-gray-500'>View Order History</Link>
+            <Link href={'/user/dashboard/1'} className='text-blue-500'>View Order History</Link>
+
+            <Link href={'/admin/create/shop'} className='ml-8 text-orange-500'>Create Shop</Link>            
 
            </div>
 

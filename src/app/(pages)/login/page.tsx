@@ -110,7 +110,7 @@ const LoginPage = () => {
                 Login
               </button>
               <p className="text-gray-600 text-sm text-left py-8">
-                Don't have an account?{" "}
+                Don`t have an account?{" "}
                 <Link className="text-red-400 underline" href={"/signup"}>
                   Create one Here
                 </Link>

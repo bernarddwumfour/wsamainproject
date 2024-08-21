@@ -1,11 +1,42 @@
-import React from "react";
+"use client";
+import { Order } from "@/app/components/types";
+import axios from "axios";
+import Link from "next/link";
+import React, {useState, useEffect} from "react";
 
-const page = () => {
+
+
+const Page = ({ userId=0 }) => {
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const apiUrl = process.env.NEXT_PUBLIC_ORDERMANAGEMENT_API_URL;
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const response = await axios.get<Order[]>(`https://localhost:7093/api/Orders`);
+        setOrders(response.data);
+      } catch (error) {
+        console.error('Error fetching orders:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchOrders();
+  });
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   return (
     <main className="bg-white min-h-screen py-24 pt-[9rem]">
       <h1 className="text-center font-3xl text-gray-600 text-2xl font-semibold">
+      <h1 className="text-center font-3xl text-gray-600 text-2xl font-semibold">
         My Dashboard
       </h1>
+      </h1>
+
+      <Link className="px-40 text-orange-600" href="/admin/create/listing">Add Product</Link>
 
       <div className="px-32">
         <div className="flex gap-10 justify-start py-12">
@@ -17,79 +48,24 @@ const page = () => {
 
           <div className="main p-6 flex flex-col gap-4  shadow-lg rounded-lg text-gray-600 h-fit">
             <table>
-              <thead className="bg-red-300 text-white">
+              <thead className="bg-gray-500 text-white">
                 <td className="p-1 px-4 font-semiboldn ">Order id</td>
                 <td className="p-1 px-4 font-semiboldn ">Date</td>
-                <td className="p-1 px-4 font-semiboldn ">Items Ordered</td>
                 <td className="p-1 px-4 font-semiboldn ">Status</td>
+                <td className="p-1 px-4 font-semiboldn ">Total Amount</td>
               </thead>
               <tbody>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
+                {orders.map((order)=>(
+                  <tr key={order.orderID} className="mb-2">
+                  <td className="p-1 px-4 font-semiboldn ">{order.orderID}</td>
+                  <td className="p-1 px-4 font-semiboldn ">{order.orderPlaced}</td>
+                  <td className="p-1 px-4 font-semiboldn ">{order.status}</td>
+                  <td className="p-1 px-4 font-semiboldn ">{order.totalAmount}</td>
                 </tr>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
-                </tr>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
-                </tr>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
-                </tr>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
-                </tr>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
-                </tr>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
-                </tr>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
-                </tr>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
-                </tr>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
-                </tr>
-                <tr className="mb-2">
-                  <td className="p-1 px-4 font-semiboldn ">1000111</td>
-                  <td className="p-1 px-4 font-semiboldn ">22/09/2000</td>
-                  <td className="p-1 px-4 font-semiboldn ">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                  <td className="p-1 px-4 font-semiboldn ">Delivered</td>
-                </tr>
+                ))}
+                
+                              
+               
               </tbody>
             </table>
           </div>
@@ -99,4 +75,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
