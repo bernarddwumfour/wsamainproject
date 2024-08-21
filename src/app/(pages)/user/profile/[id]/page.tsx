@@ -64,11 +64,9 @@ const page = () => {
 
             
 
-            <Link href={'/user/dashboard/1'} className='text-gray-500'>View Order History</Link>
+            <Link href={'/user/dashboard/1'} className='text-blue-500'>View Order History</Link>
 
-            <Link href={'/user/dashboard/1'} className='text-gray-500'>View Order History</Link>
-
-            <Link href={'/user/dashboard/1'} className='text-gray-500'>View Order History</Link>
+            <Link href={'/admin/create/shop'} className='ml-8 text-orange-500'>Create Shop</Link>            
 
            </div>
 

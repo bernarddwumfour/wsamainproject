@@ -1,6 +1,7 @@
 "use client";
 import { Order } from "@/app/components/types";
 import axios from "axios";
+import Link from "next/link";
 import React, {useState, useEffect} from "react";
 
 
@@ -34,6 +35,8 @@ const Page = ({ userId=0 }) => {
         My Dashboard
       </h1>
       </h1>
+
+      <Link className="px-40 text-orange-600" href="/admin/create/listing">Add Product</Link>
 
       <div className="px-32">
         <div className="flex gap-10 justify-start py-12">

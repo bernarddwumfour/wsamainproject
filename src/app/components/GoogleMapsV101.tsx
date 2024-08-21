@@ -184,7 +184,7 @@ const GoogleMapsV1 = () => {
   };
 
   return (
-    <div className="p-4 mt-12 bg-white min-h-screen flex flex-col items-center">
+    <div className="p-4 mt-40 bg-white min-h-screen flex flex-col items-center">
       <h1 className="text-2xl font-bold text-gray-600 mb-4">Delivery</h1>
       <div className="mb-4 flex flex-col gap-4 w-full max-w-lg">
         <input type="text" ref={pickupInputRef} placeholder="Enter pickup location" className="p-2 border border-gray-500 rounded" />
